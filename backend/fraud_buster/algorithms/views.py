@@ -19,3 +19,18 @@ def get_stock_data(request, symbol):
     data = df.to_dict(orient='records')
 
     return JsonResponse(data, safe=False)
+
+def get_all_stock_symbols(request):
+    # Get the base directory of the project
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+    # Path to the CSV files directory
+    csv_dir_path = os.path.join(BASE_DIR, 'CSV_files')
+
+    # List all CSV files in the directory
+    try:
+        stock_symbols = [f.replace('.csv', '') for f in os.listdir(csv_dir_path) if f.endswith('.csv')]
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse(stock_symbols, safe=False)
