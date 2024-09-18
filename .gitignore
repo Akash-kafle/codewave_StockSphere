@@ -8,3 +8,5 @@ node_modules/
 
 # Optional: Ignore log files
 *.log
+
+CSV_files/
