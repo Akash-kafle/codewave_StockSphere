@@ -14,7 +14,7 @@ import dayjs from "dayjs"; // For date formatting
 import {
   calculateRSI,
   calculateBollingerBands,
-} from "../utils/technicalIndicators"; // Adjust path as needed
+} from "../utils/technicalIndicators"; 
 
 const StockFraudDetectionDashboard = () => {
   const { stockData, stockSymbols, setSelectedSymbol, loading, error } =

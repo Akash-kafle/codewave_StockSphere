@@ -5,21 +5,21 @@ import FraudAlerts from "./components/FraudAlerts";
 import PatternVisualization from "./components/PatternVisualization";
 import { notification } from "antd";
 import "antd/dist/reset.css"; // Ensure you include Ant Design's CSS
-
+import Chatbot from "./components/ChatBot";
 import Sidebar from "./components/Sidebar";
 import { StockDataProvider } from "./context/StockDataContext";
 
 function App() {
-  const openNotification = () => {
-    notification.open({
-      message: "Anomalies Detected",
-      description: "",
-    });
-  };
+    // const openNotification = () => {
+    //   notification.open({
+    //     message: "Anomalies Detected",
+    //     description: "",
+    //   });
+    // };
 
-  useEffect(() => {
-    openNotification();
-  }, []);
+    // useEffect(() => {
+    //   openNotification();
+    // }, []);
 
   return (
     <>
@@ -35,6 +35,7 @@ function App() {
             />
           </Routes>
         </div>
+        <Chatbot />
         <Sidebar />
       </StockDataProvider>
     </>
