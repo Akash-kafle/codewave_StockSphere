@@ -28,7 +28,6 @@ const PatternVisualization = () => {
   const alertId = queryParams.get("alertId");
 
   useEffect(() => {
-    // Fetch anomaly data based on alert ID
     if (alertId) {
       const data = fetchAnomalyData(alertId);
       setAnomalyData(data);
