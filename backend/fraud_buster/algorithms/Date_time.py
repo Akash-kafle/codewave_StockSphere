@@ -102,4 +102,5 @@ for a in Company_Symbol:
 
     print(f"Data has been saved to {csv_file_path}")
 
+print("The loop has ended")
 
