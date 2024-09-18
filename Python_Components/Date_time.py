@@ -4,7 +4,7 @@ import time
 import cloudscraper
 import pandas as pd
 
-def isHoliday():
+def returnHoliday():
     API_KEY = 'wXowMQ9wUdpYSmP4fCvl1hMnQhegbPSV'
     today = datetime.now().strftime("%Y-%m-%d")
     today_day = datetime.now().strftime("%A")
@@ -15,14 +15,10 @@ def isHoliday():
     holidays = response.json()['response']['holidays']
     is_holiday = False
     holiday_name = ""
-    holidays=holidays[22:30]
     public_holidays = []
     for holiday in holidays:
         public_holidays.append(holiday['date']['iso'])
-    if today in public_holidays or today_day == "Saturday" or today_day == "Sunday":
-        return True
-    else:
-        return False
+    return public_holidays
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
