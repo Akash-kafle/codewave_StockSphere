@@ -1,12 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaRegComments } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai"; 
-import axios from "axios";
+import { AiOutlineClose } from "react-icons/ai";
+import CryptoJS from "crypto-js";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const socketRef = useRef(null);
+  const [isWebSocketOpen, setIsWebSocketOpen] = useState(false);
+
+  useEffect(() => {
+    socketRef.current = new WebSocket("ws://localhost:8001/ws/chat");
+
+    socketRef.current.onopen = () => {
+      console.log("WebSocket connection opened");
+    };
+
+    socketRef.current.onclose = () => {
+      console.log("WebSocket connection closed");
+    };
+
+    socketRef.current.onerror = (error) => {
+      console.error("WebSocket error:", error);
+    };
+    setIsWebSocketOpen(true);
+    // WebSocket message handling
+    socketRef.current.onmessage = (event) => {
+      const encryptedMessage = event.data;
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: encryptedMessage, type: "bot" },
+      ]);
+    };
+  }, []);
+  //   const decryptMessage = (encryptedMessage) => {
+  //     try {
+  //       const bytes = CryptoJS.AES.decrypt(encryptedMessage, ENCRYPTION_KEY);
+  //       const decryptedMessage = bytes.toString(CryptoJS.enc.Utf8);
+  //       return decryptedMessage;
+  //     } catch (error) {
+  //       console.error("Decryption error:", error);
+  //       return "Error in decrypting the message.";
+  //     }
+  //   };
+
+  // This should be the same key used for encryption, and it should be securely managed.
+  const ENCRYPTION_KEY = "YOUR_ENCRYPTION_KEY";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Add the new message to the local state
+    setMessages([...messages, { text: message, type: "user" }]);
+
+    // Send the message to the WebSocket backend
+    if (isWebSocketOpen) {
+      socketRef.current.send(JSON.stringify({ query: message }));
+    } else {
+      console.error("WebSocket is not open. Cannot send message.");
+    }
+
+    setMessage("");
+  };
 
   const handleToggle = () => setIsOpen(!isOpen);
 
@@ -14,30 +70,13 @@ const Chatbot = () => {
 
   const handleMessageChange = (e) => setMessage(e.target.value);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Add the new message to the local state
-    setMessages([...messages, { text: message, type: "user" }]);
-
-    // Send the message to the backend
-    try {
-      await axios.post("/api/chat", { message });
-      // Optionally, handle response or add to chat history
-    } catch (error) {
-      console.error("Error posting message:", error);
-    }
-
-    setMessage("");
-  };
-
   return (
     <div
       className={`fixed bottom-4 right-4 ${
         isOpen
-          ? "w-80  bg-white border border-gray-300 rounded-lg shadow-lg "
+          ? "w-80 bg-white border border-gray-300 rounded-lg shadow-lg"
           : "w-14 bg-transparent"
-      } max-w-screen-sm transition-width duration-300 ease-in-outoverflow-hidden`}
+      } max-w-screen-sm transition-width duration-300 ease-in-out overflow-hidden`}
     >
       {isOpen ? (
         <div className="flex flex-col h-full">
@@ -51,7 +90,6 @@ const Chatbot = () => {
             </button>
           </div>
           <div className="flex-1 overflow-auto p-2">
-            {/* Render chat messages here */}
             {messages.map((msg, index) => (
               <div
                 key={index}
