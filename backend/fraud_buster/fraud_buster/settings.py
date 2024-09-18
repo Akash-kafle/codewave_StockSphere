@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'channels',
-    'algorithms',    
+    'algorithms', 
+    'fraud_buster',   
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 
-ASGI_APPLICATION = 'fraud_buster.asgi.application'
 
 ROOT_URLCONF = 'fraud_buster.urls'
 
@@ -82,6 +82,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fraud_buster.wsgi.application'
+# ASGI_APPLICATION = 'fraud_buster.asgi.application'
+
 
 
 # Database
@@ -94,11 +96,6 @@ DATABASES = {
     }
 }
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
-    },
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
