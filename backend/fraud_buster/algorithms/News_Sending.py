@@ -114,3 +114,4 @@ for a in Company_Symbol:
             break
 
 req_date = date_data_list[req_index]
+print("Git")
