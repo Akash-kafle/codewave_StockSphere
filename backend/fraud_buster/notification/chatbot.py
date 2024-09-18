@@ -23,8 +23,8 @@ encryption_key = Fernet.generate_key()
 cipher_suite = Fernet(encryption_key)
 
 # Your Gemini API URL and Token (replace these with actual ones)
-GEMINI_API_URL = "https://api.gemini.com/v1/chatbot-response"
-GEMINI_API_TOKEN = "your-gemini-api-token"
+GEMINI_API_URL = os.getenv("GEMINI_API_URL")
+GEMINI_API_TOKEN = os.getenv("GEMINI_API_TOKEN")
 
 # Function to communicate with Gemini API
 def get_gemini_response(user_query: str) -> str:
