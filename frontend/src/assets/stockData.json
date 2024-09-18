@@ -1,0 +1,398 @@
+[
+  {
+    "date": "2023-09-01",
+    "price": 145.23,
+    "volume": 3220000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 148.12,
+    "volume": 3050000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 147.60,
+    "volume": 2980000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 232.67,
+    "volume": 2801000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 235.78,
+    "volume": 2910000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 234.22,
+    "volume": 2730000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 351.00,
+    "volume": 4523000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 354.50,
+    "volume": 4600000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 358.90,
+    "volume": 4440000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 121.45,
+    "volume": 6023000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 124.12,
+    "volume": 6150000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 122.80,
+    "volume": 5900000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 202.34,
+    "volume": 1200000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 204.56,
+    "volume": 1153000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 203.90,
+    "volume": 1180000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 46.50,
+    "volume": 805000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 47.80,
+    "volume": 810000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 45.75,
+    "volume": 795000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 283.30,
+    "volume": 1550000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 289.10,
+    "volume": 1420000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 290.45,
+    "volume": 1400000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 75.12,
+    "volume": 720000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 77.80,
+    "volume": 710000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 76.50,
+    "volume": 730000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 100.45,
+    "volume": 1450000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 102.20,
+    "volume": 1420000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 101.80,
+    "volume": 1430000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 55.34,
+    "volume": 905000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 56.78,
+    "volume": 895000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 55.90,
+    "volume": 900000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-01",
+    "price": 132.50,
+    "volume": 2100000,
+    "symbol": "ORCL"
+  },
+  {
+    "date": "2023-09-02",
+    "price": 134.30,
+    "volume": 2150000,
+    "symbol": "ORCL"
+  },
+  {
+    "date": "2023-09-03",
+    "price": 133.75,
+    "volume": 2200000,
+    "symbol": "ORCL"
+  },
+   {
+    "date": "2023-09-04",
+    "price": 146.78,
+    "volume": 3100000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 149.33,
+    "volume": 3200000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 150.12,
+    "volume": 3150000,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 237.12,
+    "volume": 2750000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 238.45,
+    "volume": 2900000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 236.90,
+    "volume": 2800000,
+    "symbol": "GOOGL"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 355.30,
+    "volume": 4550000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 356.75,
+    "volume": 4630000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 357.90,
+    "volume": 4480000,
+    "symbol": "TSLA"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 122.10,
+    "volume": 6050000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 123.85,
+    "volume": 6200000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 124.50,
+    "volume": 6000000,
+    "symbol": "MSFT"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 206.78,
+    "volume": 1180000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 208.90,
+    "volume": 1160000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 207.50,
+    "volume": 1190000,
+    "symbol": "AMZN"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 48.20,
+    "volume": 820000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 49.00,
+    "volume": 825000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 48.75,
+    "volume": 810000,
+    "symbol": "NFLX"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 287.10,
+    "volume": 1570000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 291.50,
+    "volume": 1450000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 292.75,
+    "volume": 1420000,
+    "symbol": "NVDA"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 78.10,
+    "volume": 725000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 80.20,
+    "volume": 735000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 79.60,
+    "volume": 720000,
+    "symbol": "META"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 103.20,
+    "volume": 1460000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 104.75,
+    "volume": 1440000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 105.00,
+    "volume": 1450000,
+    "symbol": "DIS"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 57.80,
+    "volume": 910000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 58.50,
+    "volume": 920000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 59.10,
+    "volume": 915000,
+    "symbol": "PYPL"
+  },
+  {
+    "date": "2023-09-04",
+    "price": 135.20,
+    "volume": 2120000,
+    "symbol": "ORCL"
+  },
+  {
+    "date": "2023-09-05",
+    "price": 136.40,
+    "volume": 2170000,
+    "symbol": "ORCL"
+  },
+  {
+    "date": "2023-09-06",
+    "price": 137.10,
+    "volume": 2250000,
+    "symbol": "ORCL"
+  }
+]
