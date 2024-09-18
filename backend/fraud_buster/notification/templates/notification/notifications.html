@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Notifications</title>
+    <script>
+        var notifications = [
+            { id: 1, message: 'Fraud detected for user 1' },
+            { id: 2, message: 'Fraud detected for user 2' },
+            { id: 3, message: 'Fraud detected for user 3' },
+            { id: 4, message: 'Fraud detected for user 4' },
+            { id: 5, message: 'Fraud detected for user 5' }
+        ];
+
+        var notificationsElement = document.getElementById('notifications');
+        notifications.forEach(function(notification) {
+            var li = document.createElement('li');
+            li.textContent = notification.message;
+            notificationsElement.appendChild(li);
+        });
+    </script>
+</head>
+<body>
+    <h1>Fraud Alerts</h1>
+    <ul id="notifications">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var notifications = [
+                    { id: 1, message: 'Fraud detected for user 1' },
+                    { id: 2, message: 'Fraud detected for user 2' },
+                    { id: 3, message: 'Fraud detected for user 3' },
+                    { id: 4, message: 'Fraud detected for user 4' },
+                    { id: 5, message: 'Fraud detected for user 5' }
+                ];
+
+                var notificationsElement = document.getElementById('notifications');
+                notifications.forEach(function(notification) {
+                    var li = document.createElement('li');
+                    li.textContent = notification.message;
+                    notificationsElement.appendChild(li);
+                });
+            });
+        </script>
+    </ul>
+</body>
+</html>
