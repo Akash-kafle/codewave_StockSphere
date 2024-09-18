@@ -8,13 +8,16 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  BarChart,
+  Bar,
+  Cell,
 } from "recharts";
 import { StockDataContext } from "../context/StockDataContext";
 import dayjs from "dayjs"; // For date formatting
 import {
   calculateRSI,
   calculateBollingerBands,
-} from "../utils/technicalIndicators"; 
+} from "../utils/technicalIndicators";
 
 const StockFraudDetectionDashboard = () => {
   const { stockData, stockSymbols, setSelectedSymbol, loading, error } =
@@ -41,6 +44,14 @@ const StockFraudDetectionDashboard = () => {
   const rsiData = calculateRSI(stockData);
   const bollingerBandsData = calculateBollingerBands(stockData, 20);
 
+  // Prepare the data for BarChart
+  const processedData = stockData.map((entry) => ({
+    ...entry,
+    height: Math.abs(entry.c - entry.o), // Difference between closing and opening
+    base: Math.min(entry.o, entry.c), // The minimum of opening or closing
+    openValue: entry.o,
+    closeValue: entry.c,
+  }));
   return (
     <div className="flex flex-col p-4 bg-[#F5F7FA]">
       <h1 className="text-3xl font-bold mb-6 text-center text-[#333333]">
@@ -231,6 +242,45 @@ const StockFraudDetectionDashboard = () => {
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div className="border border-[#E0E0E0] rounded-lg shadow-lg p-4 bg-white">
+            <h2 className="text-xl font-semibold mb-4 text-[#333333]">
+              Candlestick Chart
+            </h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={processedData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="TimeStamp" tickFormatter={formatDate} />
+                <YAxis
+                  domain={[
+                    Math.min(...processedData.map((d) => d.base)),
+                    "auto",
+                  ]}
+                />
+                <Tooltip labelFormatter={formatDate} />
+
+                {/* Bar for the range between opening and closing */}
+                <Bar
+                  dataKey="height"
+                  fill="#8884d8"
+                  barSize={10}
+                  name="Price Change"
+                  // Custom bar rendering if needed
+                >
+                  {processedData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={
+                        entry.openValue < entry.closeValue
+                          ? "#4CAF50"
+                          : "#F44336"
+                      } // Color based on price change
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
 
           <div className="border border-[#E0E0E0] rounded-lg shadow-lg p-4 bg-white">
