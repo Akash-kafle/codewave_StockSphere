@@ -4,6 +4,7 @@ import time
 import cloudscraper
 import pandas as pd
 import csv
+import os
 
 
 from datetime import datetime
@@ -64,14 +65,17 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
 Company_Symbol = ["ACLBSL", "ADBL", "BBC","BOKL","CEFL","DHPL","EBL","FMDBL","FHL","ICFC","HURJA","JBLB","IME"]
+datetime_list = generate_datetime_array()
 for a in Company_Symbol:
-    datetime_list = generate_datetime_array()
     public_holidays = returnHoliday()
     Array_index = len(datetime_list)
     url = f'https://nepsealpha.com/trading/1/history?fsk=KU5gXshKvm55XW2t&symbol={a}&resolution=1D&pass=ok'
     scraper = cloudscraper.create_scraper()
     time.sleep(5)
     r = scraper.get(url, headers=headers)
+    if r.status_code != 200:
+        print(f"Failed to fetch data for {a}. Status code: {r.status_code}")
+        continue
     json_data = r.json()
     data = pd.DataFrame(json_data)
     data = data.drop("t", axis=1)
@@ -97,8 +101,17 @@ for a in Company_Symbol:
     data = data[-x:]
     data.insert(0, "TimeStamp", workingNEPSEdates)
     print(data)
-    csv_file_path = f'../CSV_files/{a}.csv'  # Specify the file path
-    data.to_csv(csv_file_path, index=False)  # Set index=False to avoid saving the index
+     # Set index=False to avoid saving the index
+     # Specify the file path
+    csv_file_path = f'../CSV_files/{a}.csv'
+    csv_dir = os.path.dirname(csv_file_path)
+
+# Create the directory if it doesn't exist
+    if not os.path.exists(csv_dir):
+        os.makedirs(csv_dir)
+
+# Save the DataFrame to the CSV file
+    data.to_csv(csv_file_path, index=False) 
 
     print(f"Data has been saved to {csv_file_path}")
 
