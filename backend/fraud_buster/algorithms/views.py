@@ -2,6 +2,7 @@ import pandas as pd
 from django.http import JsonResponse
 from django.conf import settings
 from pathlib import Path
+from News_Sending import get_data
 import os
 # BASE_DIR = settings.BASE_DIR
 def get_stock_data(request, symbol):
@@ -34,3 +35,24 @@ def get_all_stock_symbols(request):
         return JsonResponse({'error': str(e)}, status=500)
 
     return JsonResponse(stock_symbols, safe=False)
+
+def get_all_news(request):
+    # Get the base directory of the project
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+    # Path to the CSV files directory
+    news_dir_path = os.path.join(BASE_DIR, 'CSV_files')
+
+    # List all CSV files in the directory
+    try:
+        news = [f.replace('.csv', '') for f in os.listdir(news_dir_path) if f.endswith('.csv')]
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+    
+    data = pd.read_csv(news)
+    data = data.to_dict(orient='records')
+    
+    return JsonResponse(data,{
+        "anomoaly_date":  get_data()
+    }, safe=False)
+
