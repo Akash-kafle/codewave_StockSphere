@@ -45,7 +45,7 @@ def get_all_news(request):
 
     # List all CSV files in the directory
     try:
-        news = os.path.join(BASE_DIR, 'nepse_stock_news.csv')
+        news = os.path.join(BASE_DIR, './algorithms/nepse_stock_news.csv')
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
     
