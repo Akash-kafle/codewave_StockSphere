@@ -2,7 +2,7 @@ import pandas as pd
 from django.http import JsonResponse
 from django.conf import settings
 from pathlib import Path
-from News_Sending import get_data
+from .News_Sending import get_data
 import os
 # BASE_DIR = settings.BASE_DIR
 def get_stock_data(request, symbol):

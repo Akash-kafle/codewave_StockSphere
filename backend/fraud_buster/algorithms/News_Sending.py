@@ -13,14 +13,7 @@ from datetime import datetime
 
 
 def generate_datetime_array():
-    user_input = input("Enter a datetime (YYYY-MM-DD): ")
-
-    try:
-        start_datetime = datetime.strptime(user_input, "%Y-%m-%d")
-    except ValueError:
-        print("Invalid datetime format. Please use YYYY-MM-DD.")
-        return
-
+    start_datetime = datetime.now() - timedelta(days=30)
     end_datetime = datetime.now().date()
 
     datetime_array = []
