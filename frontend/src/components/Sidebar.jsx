@@ -38,7 +38,7 @@ const Sidebar = () => {
             <li>Stock Dashboard</li>
           </NavLink>
           <NavLink
-            to="/fraudalerts"
+            to="/news"
             className={({ isActive }) =>
               `text-xl cursor-pointer block p-3 rounded-md transition-colors duration-300 ${
                 isActive
@@ -47,7 +47,7 @@ const Sidebar = () => {
               }`
             }
           >
-            <li>Fraud Alerts</li>
+            <li>News</li>
           </NavLink>
           {/* Uncomment when needed
           <NavLink
