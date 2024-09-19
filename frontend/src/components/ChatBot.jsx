@@ -74,7 +74,7 @@ const Chatbot = () => {
     <div
       className={`fixed bottom-4 right-4 ${
         isOpen
-          ? "w-80 bg-white border border-gray-300 rounded-lg shadow-lg"
+          ? "w-80 h-[80vh] bg-white border border-gray-300 rounded-lg shadow-lg"
           : "w-14 bg-transparent"
       } max-w-screen-sm transition-width duration-300 ease-in-out overflow-hidden`}
     >

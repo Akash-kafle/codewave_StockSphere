@@ -56,10 +56,11 @@ def was_saturday(date_str):
         return False
 
 def get_data():
+    dict = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
-    Company_Symbol = [ "ADBL"]
+    Company_Symbol = ["ACLBSL", "ADBL", "BBC","BOKL","CEFL","DHPL","EBL","FMDBL","FHL","ICFC","HURJA","JBLB","IME"]
     datetime_list = generate_datetime_array()
     for a in Company_Symbol:
         public_holidays = returnHoliday()
@@ -78,15 +79,12 @@ def get_data():
         #910
         data = data[-Array_index:]
 
-
-        
         workingNEPSEdates = []
         if datetime_list:
             for dt in datetime_list:
                 workingNEPSEdates.append(dt.strftime("%Y-%m-%d"))
                 if(dt in public_holidays or was_saturday(str(dt))):
                     workingNEPSEdates.remove(dt.strftime("%Y-%m-%d"))
-
 
         x = len(workingNEPSEdates)
         data = data[-x:]
