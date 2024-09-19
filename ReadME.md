@@ -47,7 +47,7 @@ StockSphere is a tool designed to help users monitor and predict stock market tr
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/codewave_stockssphere/StockSphere.git
+   git clone https://github.com/Akash-kafle/codewave_StockSphere.git
    ```
 
 2. **Navigate to the frontend directory and install dependencies:**
