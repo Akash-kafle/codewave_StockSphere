@@ -11,7 +11,7 @@
 - <a href = "https://github.com/Akash-kafle">**Akash Kafle**</a>
 - <a href= "https://github.com/DontHash">**Bhisma Prasad Bhandari**</a>
 - <a href= "https://github.com/hridayanshu236">**Hridayanshu Raj Acharya**</a>
-- <a href= "https://github.com/sumankhatri18">**Suman Khatri**</a>
+- <a href= "https://github.com/sumankhatri17">**Suman Khatri**</a>
 
 ## Project Overview
 
